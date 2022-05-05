@@ -73,8 +73,6 @@ $allievi = [
 ];
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,33 +145,9 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
                   else{
                       echo "Non consentito";
                   }
-
         ?>
     <button type="submit">Invia</button>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <h1> Snecchino 4</h1> 
   <br>
