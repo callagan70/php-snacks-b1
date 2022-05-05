@@ -94,6 +94,82 @@ for($i = 0; $i < count ($matches); $i++ ){
 echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i]['point_team_1'] . "-" . $matches[$i]['point_team_2'] . "<br>"; }
 ?>
 
+
+<h1> Snecchino 2</h1> 
+  <br>
+  <h3>Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”.</h3>
+  <br>
+
+  <form method="GET">
+        <label for="nome">Inserisci Nome</label>
+            <input type="text" name="nome" placeholder="Nome"> <br>
+            <?php
+                $lunghezzaNom = strlen ($_GET['nome']);
+                if( $lunghezzaNom < 3){
+                    echo "    Il nome deve essere di almeno 3 caratteri"."<br>";
+                };
+            ?>
+        <label for="email">Inserisci Email</label>
+            <input type="text" name="email" placeholder="EMail"> <br>
+            <?php
+                $email = $_GET['email'];
+                // var_dump($email);
+                if (strpos($email, '.') !== false && (strpos($email, '@') !== false )) {
+                  }
+                else{
+                    echo "La parola non è una email"."<br>";
+                };
+            ?>
+
+        <label for="age">Inserisci Anni</label>
+            <input type="text" name="age" placeholder="Anni"> <br>
+            <?php
+                $age = $_GET['age'];
+
+                if (is_numeric($age) == true) {
+                    echo 'la variabile è un numero'."<br>";    
+                  }
+                  else{
+                    echo 'la variabile NON è un numero'."<br>";      
+                  };
+            ?>
+
+        <h3>Accesso</h3>
+        <?php 
+                  if($lunghezzaNom < 3 && strpos($email, '.') !== false && (strpos($email, '@') !== false ) && is_numeric($age) == true){
+                      echo "Consetito";
+                  }
+                  else{
+                      echo "Non consentito";
+                  }
+
+        ?>
+    <button type="submit">Invia</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1> Snecchino 4</h1> 
   <br>
   <h3>Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta</h3>
