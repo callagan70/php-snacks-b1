@@ -107,16 +107,21 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
                 $lunghezzaNom = strlen ($_GET['nome']);
                 if( $lunghezzaNom < 3){
                     echo "    Il nome deve essere di almeno 3 caratteri"."<br>";
-                };
+                    $nomeK = 0;
+                }
+                else{
+                    $nomeK = 1;
+                }
             ?>
         <label for="email">Inserisci Email</label>
             <input type="text" name="email" placeholder="EMail"> <br>
             <?php
                 $email = $_GET['email'];
-                // var_dump($email);
                 if (strpos($email, '.') !== false && (strpos($email, '@') !== false )) {
+                    $emailK = 1;
                   }
                 else{
+                    $emailK = 0;
                     echo "La parola non è una email"."<br>";
                 };
             ?>
@@ -125,18 +130,18 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
             <input type="text" name="age" placeholder="Anni"> <br>
             <?php
                 $age = $_GET['age'];
-
                 if (is_numeric($age) == true) {
-                    echo 'la variabile è un numero'."<br>";    
-                  }
+                    $ageK = 1;
+                    }
                   else{
+                    $ageK = 0;
                     echo 'la variabile NON è un numero'."<br>";      
                   };
             ?>
 
         <h3>Accesso</h3>
         <?php 
-                  if($lunghezzaNom < 3 && strpos($email, '.') !== false && (strpos($email, '@') !== false ) && is_numeric($age) == true){
+                  if($nomeK == 1 && $emailK == 1 && $ageK == 1 ){
                       echo "Consetito";
                   }
                   else{
