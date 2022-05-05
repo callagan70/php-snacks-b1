@@ -63,25 +63,16 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
     $random = 0;
 
   for ($i = 0; $i <= 14; $i++){
-    $random = rand (1, 20);
-    echo "numero random: " . $random . "<br>";
-    
+
+    do{
+        $random = rand (1, 20);
+    } while (in_array($random, $arrayNum) == true);
+
     $arrayNum[$i] = $random;
 
-    // for ($e=0; $e < count ($arrayNum); $e++ ){
-        // // if ($random != $arrayNum[i]){
-        // //     $arrayNum += $random;
-        // //     }
-        // // else{
-        // //     $random = rand (1, 20);
-        // //     $arrayNum += $random;
-        // //     };
-        // // }
-        // return $arrayNum;
     };
     var_dump($arrayNum)
-      
-  ?>
+?>
 
 
 </body>
