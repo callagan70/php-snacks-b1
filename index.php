@@ -59,14 +59,15 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
 
   <?php
   
-    $arrayNum = [ ];
+    $arrayNum = [];
+    $random = 0;
 
   for ($i = 0; $i <= 14; $i++){
     $random = rand (1, 20);
-    echo "numero random: " . $random;
-    $arrayNum = $random;
-    echo "Array: " . $arrayNum;
-    var_dump($arrayNum);
+    echo "numero random: " . $random . "<br>";
+    
+    $arrayNum[$i] = $random;
+
     // for ($e=0; $e < count ($arrayNum); $e++ ){
         // // if ($random != $arrayNum[i]){
         // //     $arrayNum += $random;
@@ -76,14 +77,10 @@ echo $matches[$i]['team1'] . " - " . $matches[$i]['team2'] . " | " . $matches[$i
         // //     $arrayNum += $random;
         // //     };
         // // }
+        // return $arrayNum;
     };
-
-    
-  
-  
-  
-  
-  
+    var_dump($arrayNum)
+      
   ?>
 
 
